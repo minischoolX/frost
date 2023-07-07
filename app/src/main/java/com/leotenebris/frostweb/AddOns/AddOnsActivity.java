@@ -1,4 +1,4 @@
-package com.leotenebris.frostweb.Settings;
+package com.leotenebris.frostweb.AddOns;
 
 import android.os.Bundle;
 
