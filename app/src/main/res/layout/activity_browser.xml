@@ -65,6 +65,14 @@
             android:tint="@color/white" />
 
         <ImageButton
+            android:id="@+id/btAddOn"
+            style="@style/ActionBarButton"
+            android:contentDescription="@string/addon"
+            android:onClick="popupAddOn"
+            android:src="@drawable/icon_addon"
+            android:tint="@color/white" />
+
+        <ImageButton
             android:id="@+id/btMore"
             style="@style/ActionBarButton"
             android:contentDescription="@string/more"
