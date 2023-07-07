@@ -232,7 +232,7 @@ public class BrowserActivity extends AppCompatActivity implements PopupMenu.OnMe
         popup.show();
     }
     
-    public void popupAddOn() {
+    public void popupAddOn(View v) {
         Intent intent;
         intent = new Intent(applicationContext, AddOnsActivity.class);
         startActivity(intent);
