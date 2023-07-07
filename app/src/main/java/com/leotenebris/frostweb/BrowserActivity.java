@@ -70,7 +70,7 @@ public class BrowserActivity extends AppCompatActivity implements PopupMenu.OnMe
     public static final int FILE_CHOOSER = 1;
 
     private EditText linkInput;
-    private ImageButton btGo, btBack, btForward, btMore;
+    private ImageButton btGo, btBack, btForward, btMore, btAddOn;
     private ProgressBar progressBar;
     private Context applicationContext;
 
@@ -125,6 +125,7 @@ public class BrowserActivity extends AppCompatActivity implements PopupMenu.OnMe
         btBack = findViewById(R.id.btBack);
         btForward = findViewById(R.id.btForward);
         btMore = findViewById(R.id.btMore);
+        btAddOn = findViewById(R.id.btAddOn);
         progressBar = findViewById(R.id.progressBar);
 
         startup = true;
@@ -228,7 +229,13 @@ public class BrowserActivity extends AppCompatActivity implements PopupMenu.OnMe
         popup.inflate(R.menu.more);
         popup.show();
     }
-
+    
+    public void popupAddOn() {
+        Intent intent;
+        intent = new Intent(applicationContext, AddOnsActivity.class);
+        startActivity(intent);
+    }
+   
     @Override
     public boolean onMenuItemClick(MenuItem item) {
         Intent intent;
@@ -491,11 +498,13 @@ public class BrowserActivity extends AppCompatActivity implements PopupMenu.OnMe
             btBack.setVisibility(View.GONE);
             btForward.setVisibility(View.GONE);
             btMore.setVisibility(View.GONE);
+            btAddOn.setVisibility(View.GONE);
             btGo.setImageResource(R.drawable.icon_search);
         } else {
             btBack.setVisibility(View.VISIBLE);
             btForward.setVisibility(View.VISIBLE);
             btMore.setVisibility(View.VISIBLE);
+            btAddOn.setVisibility(View.VISIBLE);
             if (isLoaded) {
                 btGo.setImageResource(R.drawable.icon_refresh);
             } else {
