@@ -75,6 +75,12 @@
             android:theme="@style/AppTheme" />
 
         <activity
+            android:name=".AddOns.AddOnsActivity"
+            android:label="@string/addon"
+            android:parentActivityName=".BrowserActivity"
+            android:theme="@style/AppTheme" />
+
+        <activity
             android:name=".Tabs.TabsActivity"
             android:label="@string/tabs"
             android:parentActivityName=".BrowserActivity"
