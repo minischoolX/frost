@@ -34,6 +34,8 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.leotenebris.frostweb.AddOns.AddOnsActivity;
+import com.leotenebris.frostweb.AddOns.AddOnsFragment;
 import com.leotenebris.frostweb.History.HistoryActivity;
 import com.leotenebris.frostweb.History.HistoryItem;
 import com.leotenebris.frostweb.Settings.SettingsActivity;
