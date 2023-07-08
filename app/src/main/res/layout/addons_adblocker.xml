@@ -18,15 +18,53 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="18"
+                
                 android:orientation="horizontal">
-                <ImageView
+
+                <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:elevation="2dp"
+            android:outlineProvider="background"
+            android:padding="8dp"
+            android:clipToOutline="true">
+
+            <ImageView
                     android:id="@+id/adBlockerImg"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_gravity="center_vertical"
-                    android:src="@drawable/ad_blocker" />
+                    android:src="@drawable/ad_blocker"
+                    android:padding="4dp" />
+
+        </View>
+
+        <!-- Additional content for the first linear layout -->
+
+    </FrameLayout>
+            </LinearLayout>
+
+            
+                
+                
+                
+                
+            
+            <LinearLayout
+                android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="60"
+        android:background="#00FF00"
+                android:orientation="vertical"
+                android:padding="4dp">
                 <TextView
                     android:id="@+id/adBlockerTitle"
                     android:layout_width="match_parent"
@@ -37,25 +75,34 @@
                     android:textSize="16sp"
                     android:textColor="#000000"
                     android:text="Ad Blocker"/>
-                <Switch
-                    android:id="@+id/adBlockerEnabled"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="4dp">
                 <TextView
                     android:id="@+id/adBlockerDescription"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="14sp"
                     android:textColor="#333333"
+                    android:justificationMode="justified"
+            android:textAlignment="viewStart"
                     android:text="Blocks most ads on web pages" />
             </LinearLayout>
+        <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="22"
+        android:background="#0000FF"
+        android:gravity="center">
+
+            <Switch
+                    android:id="@+id/adBlockerEnabled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical" />
+
+        
+
+        
+
+    </LinearLayout>
         </LinearLayout>
     </RelativeLayout>
 </androidx.cardview.widget.CardView>
