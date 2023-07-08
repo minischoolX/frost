@@ -34,22 +34,22 @@ public class AddOnsFragment extends Fragment {
         LinearLayout adBlockerCard = rootView.findViewById(R.id.adBlockerCard);
         ImageView adBlockerImg = rootView.findViewById(R.id.adBlockerImg);
         TextView adBlockerTitle = rootView.findViewById(R.id.adBlockerTitle);
-        TextView adBlockerDescription = rootView.findViewById(R.id.adBlockerDescription);
         Switch adBlockerEnabled = rootView.findViewById(R.id.adBlockerEnabled);
+        TextView adBlockerDescription = rootView.findViewById(R.id.adBlockerDescription);
 
         LinearLayout videoEnhancerCard = rootView.findViewById(R.id.videoEnhancerCard);
         ImageView videoEnhancerImg = rootView.findViewById(R.id.videoEnhancerImg);
         TextView videoEnhancerTitle = rootView.findViewById(R.id.videoEnhancerTitle);
-        TextView videoEnhancerDescription = rootView.findViewById(R.id.videoEnhancerdescription);
         Switch videoEnhancerEnabled = rootView.findViewById(R.id.videoEnhancerEnabled);
+        TextView videoEnhancerDescription = rootView.findViewById(R.id.videoEnhancerdescription);
         TextView videoEnhancerInfo = rootView.findViewById(R.id.videoEnhancerInfo);
         ImageView videoEnhancerReloadImg = rootView.findViewById(R.id.videoEnhancerReloadImg);
 
         LinearLayout readAloudCard = rootView.findViewById(R.id.readAloudCard);
         ImageView readAloudImg = rootView.findViewById(R.id.readAloudImg);
         TextView readAloudTitle = rootView.findViewById(R.id.readAloudTitle);
-        TextView readAloudDescription = rootView.findViewById(R.id.readAloudDescription);
         Switch readAloudEnabled = rootView.findViewById(R.id.readAloudEnabled);
+        TextView readAloudDescription = rootView.findViewById(R.id.readAloudDescription);
 
         // Initialize SharedPreferences
         sharedPreferences = getActivity().getSharedPreferences("AddOnsPrefs", getActivity().MODE_PRIVATE);
@@ -75,6 +75,7 @@ public class AddOnsFragment extends Fragment {
                 sharedPreferences.edit().putBoolean("videoEnhancer", isChecked).apply();
 
                 if (isChecked) {
+                    
                     videoEnhancerInfo.setVisibility(View.VISIBLE);
                     videoEnhancerInfo.setText("Video Enhancer is configured with default settings. You can click anywhere on this card to modify your preferences.");
                     //videoEnhancerReloadImg.setVisibility(View.VISIBLE);
