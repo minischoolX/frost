@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/adblocker_card"
+        android:id="@+id/read_aloud_card"
         android:orientation="horizontal"
         android:gravity="center_vertical">
         <LinearLayout
