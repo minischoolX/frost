@@ -58,7 +58,7 @@ public class AddOnsFragment extends Fragment {
         adBlockerEnabled.setChecked(sharedPreferences.getBoolean("adBlocker", true));
         videoEnhancerEnabled.setChecked(sharedPreferences.getBoolean("videoEnhancer", true));
         readAloudEnabled.setChecked(sharedPreferences.getBoolean("readAloud", true));
-        adBlockerTiTle.setVisibility(View.GONE);
+        adBlockerTitle.setVisibility(View.GONE);
         videoEnhancerTitle.setVisibility(View.GONE);
         readAloudTitle.setVisibility(View.GONE);
         //adBlockerEnabled.setVisibility(View.VISIBLE);
