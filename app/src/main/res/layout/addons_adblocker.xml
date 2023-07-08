@@ -34,8 +34,7 @@
             android:background="#FFFFFF"
             android:elevation="2dp"
             android:outlineProvider="background"
-            android:padding="8dp"
-            android:clipToOutline="true">
+            android:padding="8dp">
 
             <ImageView
                     android:id="@+id/adBlockerImg"
@@ -81,7 +80,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="14sp"
                     android:textColor="#333333"
-                    android:justificationMode="justified"
+                    
             android:textAlignment="viewStart"
                     android:text="Blocks most ads on web pages" />
             </LinearLayout>
