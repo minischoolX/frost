@@ -54,6 +54,7 @@ public class AddOnsFragment extends Fragment {
         // Initialize SharedPreferences
         sharedPreferences = getActivity().getSharedPreferences("AddOnsPrefs", getActivity().MODE_PRIVATE);
 
+        videoEnhancerTitle.setVisibility(View.GONE);
         // Set initial switch state from SharedPreferences
         adBlockerEnabled.setChecked(sharedPreferences.getBoolean("adBlocker", true));
         videoEnhancerEnabled.setChecked(sharedPreferences.getBoolean("videoEnhancer", true));
