@@ -59,13 +59,13 @@ public class AddOnsFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_add_ons, container, false);
 
         // Initialize views
-        RelativeLayout adBlockerCard = rootView.findViewbyId(R.id.read_aloud_card);
+        RelativeLayout adBlockerCard = rootView.findViewbyId(R.id.adBlockerCard);
         ImageView adBlockerImg = rootView.findViewById(R.id.adBlockerImg);
         TextView adBlockerTitle = rootView.findViewById(R.id.adBlockerTitle);
         TextView adBlockerDescription = rootView.findViewById(R.id.adBlockerDescription);
         Switch adBlockerEnabled = rootView.findViewById(R.id.adBlockerEnabled);
 
-        RelativeLayout videoEnhancerCard = rootView.findViewbyId(R.id.video_enhancer_card);
+        RelativeLayout videoEnhancerCard = rootView.findViewbyId(R.id.videoEnhancerCard);
         ImageView videoEnhancerImg = rootView.findViewById(R.id.videoEnhancerImg);
         TextView videoEnhancerTitle = rootView.findViewById(R.id.videoEnhancerTitle);
         TextView videoEnhancerDescription = rootView.findViewById(R.id.videoEnhancerdescription);
@@ -73,7 +73,7 @@ public class AddOnsFragment extends Fragment {
         TextView videoEnhancerInfo = rootView.findViewById(R.id.videoEnhancerInfo);
         ImageView videoEnhancerReloadImg = rootView.findViewById(R.id.videoEnhancerReloadImg);
 
-        RelativeLayout readAloudCard = rootView.findViewbyId(R.id.read_aloud_card);
+        RelativeLayout readAloudCard = rootView.findViewbyId(R.id.readAloudCard);
         ImageView readAloudImg = rootView.findViewById(R.id.readAloudImg);
         TextView readAloudTitle = rootView.findViewById(R.id.readAloudTitle);
         TextView readAloudDescription = rootView.findViewById(R.id.readAloudDescription);
