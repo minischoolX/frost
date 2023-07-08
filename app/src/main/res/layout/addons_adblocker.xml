@@ -50,4 +50,4 @@
                 android:text="Blocks most ads on web pages" />
         </LinearLayout>
     </RelativeLayout>
-</android.support.v7.widget.CardView>
+</androidx.cardview.widget.CardView>
