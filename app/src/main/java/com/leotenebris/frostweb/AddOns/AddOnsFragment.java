@@ -58,7 +58,15 @@ public class AddOnsFragment extends Fragment {
         adBlockerEnabled.setChecked(sharedPreferences.getBoolean("adBlocker", true));
         videoEnhancerEnabled.setChecked(sharedPreferences.getBoolean("videoEnhancer", true));
         readAloudEnabled.setChecked(sharedPreferences.getBoolean("readAloud", true));
-
+        adBlockerTiTle.setVisibility(View.GONE);
+        videoEnhancerTitle.setVisibility(View.GONE);
+        readAloudTitle.setVisibility(View.GONE);
+        //adBlockerEnabled.setVisibility(View.VISIBLE);
+        //videoEnhancerEnabled.setVisibility(View.VISIBLE);
+        //readAloudEnabled.setVisibility(View.VISIBLE);
+        //adBlockerEnabled.setChecked(true);
+        //videoEnhancerEnabled.setChecked(true);
+        //readAloudEnabled.setChecked(true);
         // Set switch change listeners
         adBlockerEnabled.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
