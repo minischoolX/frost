@@ -38,6 +38,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ImageView;
 import android.widget.Switch;
@@ -58,11 +59,13 @@ public class AddOnsFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_add_ons, container, false);
 
         // Initialize views
+        RelativeLayout adBlockerCard = rootView.findViewbyId(R.id.read_aloud_card);
         ImageView adBlockerImg = rootView.findViewById(R.id.adBlockerImg);
         TextView adBlockerTitle = rootView.findViewById(R.id.adBlockerTitle);
         TextView adBlockerDescription = rootView.findViewById(R.id.adBlockerDescription);
         Switch adBlockerEnabled = rootView.findViewById(R.id.adBlockerEnabled);
 
+        RelativeLayout videoEnhancerCard = rootView.findViewbyId(R.id.video_enhancer_card);
         ImageView videoEnhancerImg = rootView.findViewById(R.id.videoEnhancerImg);
         TextView videoEnhancerTitle = rootView.findViewById(R.id.videoEnhancerTitle);
         TextView videoEnhancerDescription = rootView.findViewById(R.id.videoEnhancerdescription);
@@ -70,6 +73,7 @@ public class AddOnsFragment extends Fragment {
         TextView videoEnhancerInfo = rootView.findViewById(R.id.videoEnhancerInfo);
         ImageView videoEnhancerReloadImg = rootView.findViewById(R.id.videoEnhancerReloadImg);
 
+        RelativeLayout readAloudCard = rootView.findViewbyId(R.id.read_aloud_card);
         ImageView readAloudImg = rootView.findViewById(R.id.readAloudImg);
         TextView readAloudTitle = rootView.findViewById(R.id.readAloudTitle);
         TextView readAloudDescription = rootView.findViewById(R.id.readAloudDescription);
@@ -103,11 +107,15 @@ public class AddOnsFragment extends Fragment {
                     videoEnhancerInfo.setText("Video Enhancer is configured with default settings. You can click anywhere on this card to modify your preferences.");
                     //videoEnhancerReloadImg.setVisibility(View.VISIBLE);
                     //videoEnhancerReloadImg.setImageResource(R.drawable.video_enhancer_reload);
-                    videoEnhancerImg.setOnClickListener(new View.OnClickListener() {
+                    videoEnhancerCard.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            // Perform the desired action when the Video Enhancer card is clicked
-                            Toast.makeText(getActivity(), "Video Enhancer card clicked!", Toast.LENGTH_SHORT).show();
+                            if (v.getId() != R.id.videoEnhancerEnabled) {
+                                // Handle the click event for the LinearLayout (excluding the Switch)
+                                // Add your custom logic here
+                                // Perform the desired action when the Video Enhancer card is clicked
+                                Toast.makeText(getActivity(), "Video Enhancer card clicked!", Toast.LENGTH_SHORT).show();
+                            }
                         }
                     });
                 } else {
