@@ -27,14 +27,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <View
+<!--               <View
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="#FFFFFF"
                     android:elevation="2dp"
                     android:outlineProvider="background"
                     android:padding="8dp">
-
+-->
                     <ImageView
                         android:id="@+id/adBlockerImg"
                         android:layout_width="60dp"
@@ -42,8 +42,8 @@
                         android:layout_gravity="center_vertical"
                         android:src="@drawable/ad_blocker"
                         android:padding="4dp" />
-                </View>
-            </FrameLayout>
+<!--               </View>
+-->            </FrameLayout>
         </LinearLayout>
             <LinearLayout
                 android:layout_width="0dp"
