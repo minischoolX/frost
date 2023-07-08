@@ -61,7 +61,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:background="#F5F5F5"
-                android:padding="8dp">
+                android:padding="8dp"
+                android:visibility="invisible">
                 <TextView
                     android:id="@+id/videoEnhancerInfo"
                     android:layout_width="0dp"
