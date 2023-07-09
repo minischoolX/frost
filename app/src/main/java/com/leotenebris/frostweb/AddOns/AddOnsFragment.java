@@ -41,7 +41,7 @@ public class AddOnsFragment extends Fragment {
         ImageView videoEnhancerImg = rootView.findViewById(R.id.videoEnhancerImg);
         TextView videoEnhancerTitle = rootView.findViewById(R.id.videoEnhancerTitle);
         Switch videoEnhancerEnabled = rootView.findViewById(R.id.videoEnhancerEnabled);
-        TextView videoEnhancerDescription = rootView.findViewById(R.id.videoEnhancerdescription);
+        TextView videoEnhancerDescription = rootView.findViewById(R.id.videoEnhancerDescription);
         TextView videoEnhancerInfo = rootView.findViewById(R.id.videoEnhancerInfo);
         ImageView videoEnhancerReloadImg = rootView.findViewById(R.id.videoEnhancerReloadImg);
 
