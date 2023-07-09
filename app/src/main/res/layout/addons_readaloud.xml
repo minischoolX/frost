@@ -16,7 +16,7 @@
             android:id="@+id/readAloudCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#00FF00"
+            
             android:orientation="vertical">
             <LinearLayout
                 android:layout_width="match_parent"
@@ -25,40 +25,41 @@
                 <ImageView
                     android:id="@+id/readAloudImg"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:layout_weight="18"
                     
                     android:layout_gravity="center_vertical"
                     android:src="@drawable/read_aloud" />
-                <TextView
-                    android:id="@+id/readAloudTitle"
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="60"
-                    android:layout_gravity="center_vertical"
-                    android:paddingLeft="12.0dip"
-                    android:textSize="16sp"
-                    android:textColor="#000000"
-                    android:text="Read Aloud"/>
+                    android:orientation="vertical"
+                    android:padding="4dp">
+                    <TextView
+                        android:id="@+id/readAloudTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:paddingLeft="12.0dip"
+                        android:textSize="16sp"
+                        android:textColor="#000000"
+                        android:text="Read Aloud"/>
+                    <TextView
+                        android:id="@+id/readAloudDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:textColor="#333333"
+                        android:text="Add Description" />
+               </LinearLayout>
+
                 <Switch
                     android:id="@+id/readAloudEnabled"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="22"
                     android:layout_gravity="center_vertical" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="4dp">
-                <TextView
-                    android:id="@+id/readAloudDescription"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="14sp"
-                    android:textColor="#333333"
-                    android:text="Add Description" />
             </LinearLayout>
         </LinearLayout>
     </RelativeLayout>
