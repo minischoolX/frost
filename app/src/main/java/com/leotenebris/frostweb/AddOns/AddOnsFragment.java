@@ -57,7 +57,7 @@ public class AddOnsFragment extends Fragment {
         // Set initial switch state from SharedPreferences
         adBlockerEnabled.setChecked(sharedPreferences.getBoolean("adBlocker", true));
         videoEnhancerEnabled.setChecked(sharedPreferences.getBoolean("videoEnhancer", true));
-                if (videoEnhancerEnabled.setChecked(true)) {
+                if (videoEnhancerEnabled.isChecked()) {
                     
                     videoEnhancerInfo.setVisibility(View.VISIBLE);
                     videoEnhancerInfo.setText("Video Enhancer is configured with default settings. You can click anywhere on this card to modify your preferences.");
