@@ -54,10 +54,31 @@ public class AddOnsFragment extends Fragment {
         // Initialize SharedPreferences
         sharedPreferences = getActivity().getSharedPreferences("AddOnsPrefs", getActivity().MODE_PRIVATE);
 
-        videoEnhancerTitle.setVisibility(View.GONE);
         // Set initial switch state from SharedPreferences
         adBlockerEnabled.setChecked(sharedPreferences.getBoolean("adBlocker", true));
         videoEnhancerEnabled.setChecked(sharedPreferences.getBoolean("videoEnhancer", true));
+                if (videoEnhancerEnabled.setChecked(true)) {
+                    
+                    videoEnhancerInfo.setVisibility(View.VISIBLE);
+                    videoEnhancerInfo.setText("Video Enhancer is configured with default settings. You can click anywhere on this card to modify your preferences.");
+                    //videoEnhancerReloadImg.setVisibility(View.VISIBLE);
+                    //videoEnhancerReloadImg.setImageResource(R.drawable.video_enhancer_reload);
+                    videoEnhancerCard.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (v.getId() != R.id.videoEnhancerEnabled) {
+                                // Handle the click event for the LinearLayout (excluding the Switch)
+                                // Add your custom logic here
+                                // Perform the desired action when the Video Enhancer card is clicked
+                                Toast.makeText(getActivity(), "Video Enhancer card clicked!", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+                } else {
+                    videoEnhancerInfo.setVisibility(View.GONE);
+                    //videoEnhancerReloadImg.setVisibility(View.GONE);
+                    videoEnhancerImg.setOnClickListener(null);
+                }
         readAloudEnabled.setChecked(sharedPreferences.getBoolean("readAloud", true));
         // Set switch change listeners
         adBlockerEnabled.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
