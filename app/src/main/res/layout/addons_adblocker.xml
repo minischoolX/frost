@@ -59,7 +59,7 @@
                     android:layout_weight="22"
                     android:layout_gravity="center_vertical" 
                     android:thumb="@drawable/thumb_selector"
-                    app:track="@drawable/track_selector"/>
+                    android:track="@drawable/track_selector"/>
             </LinearLayout>
         </LinearLayout>
     </RelativeLayout>
