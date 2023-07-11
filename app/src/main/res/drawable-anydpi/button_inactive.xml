@@ -1,0 +1,4 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#CCCCCC" /> <!-- Replace with your desired inactive button background color -->
+    <corners android:radius="8dp" /> <!-- Replace with your desired button corner radius -->
+</shape>
