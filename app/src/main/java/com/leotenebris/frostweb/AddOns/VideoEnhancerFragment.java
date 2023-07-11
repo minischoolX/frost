@@ -26,14 +26,32 @@ public class VideoEnhancerFragment extends Fragment {
     private Switch squareAvatarsSwitch;
     private SharedPreferences sharedPreferences;
     private ObjManager objManager = ObjManager.getInstance();
+    private String attachPrefs;
+    private String detachPrefs;
 
     // Fragment lifecycle method
+    @Override
+    public void onAttach() {
+        super.onAttach();
+        attachPrefs = objManager.getVideoEnhancerModified();
+//        if(objManager.getVideoEnhancerModified()) {
+//            objManager.getVideoEnhancerObj(getActivity());
+//            Toast.makeText(getActivity(), objManager.getVideoEnhancerObj(getActivity()), Toast.LENGTH_SHORT).show();
+//        }
+
+    }
+
     @Override
     public void onPause() {
         super.onPause();
         if(objManager.getVideoEnhancerModified()) {
-            objManager.getVideoEnhancerObj(getActivity());
-            Toast.makeText(getActivity(), objManager.getVideoEnhancerObj(getActivity()), Toast.LENGTH_SHORT).show();
+            detachPrefs = objManager.getVideoEnhancerObj(getActivity());
+            if(!attachPrefs.equalsIgnoreCase(detachPrefs)) {
+                objManager.getVideoEnhancerObj(getActivity());
+                Toast.makeText(getActivity(), "prefs modified as follows : \n" + objManager.getVideoEnhancerObj(getActivity());, Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(getActivity(), "prefs unmodified", Toast.LENGTH_SHORT).show();
+            }
         }
 
     }
