@@ -1,8 +1,6 @@
 package com.leotenebris.frostweb.AddOns;
-/**
-import android.content.Intent;
-*/
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
@@ -55,8 +53,8 @@ public class AddOnsFragment extends Fragment {
         sharedPreferences = getActivity().getSharedPreferences("AddOnsPrefs", getActivity().MODE_PRIVATE);
 
         // Set initial switch state from SharedPreferences
-        adBlockerEnabled.setChecked(sharedPreferences.getBoolean("adBlocker", true));
-        videoEnhancerEnabled.setChecked(sharedPreferences.getBoolean("videoEnhancer", true));
+        adBlockerEnabled.setChecked(sharedPreferences.getBoolean("adBlocker", false));
+        videoEnhancerEnabled.setChecked(sharedPreferences.getBoolean("videoEnhancer", false));
                 if (videoEnhancerEnabled.isChecked()) {
                     
                     videoEnhancerInfo.setVisibility(View.VISIBLE);
@@ -67,19 +65,19 @@ public class AddOnsFragment extends Fragment {
                         @Override
                         public void onClick(View v) {
                             if (v.getId() != R.id.videoEnhancerEnabled) {
-                                // Handle the click event for the LinearLayout (excluding the Switch)
-                                // Add your custom logic here
-                                // Perform the desired action when the Video Enhancer card is clicked
-                                Toast.makeText(getActivity(), "Video Enhancer card clicked!", Toast.LENGTH_SHORT).show();
+                                Intent intent;
+                                intent = new Intent(applicationContext, VideoEnhancerActivity.class);
+                                startActivity(intent);
+                                //Toast.makeText(getActivity(), "Video Enhancer card clicked!", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
                 } else {
                     videoEnhancerInfo.setVisibility(View.GONE);
                     //videoEnhancerReloadImg.setVisibility(View.GONE);
-                    videoEnhancerImg.setOnClickListener(null);
+                    videoEnhancerCard.setOnClickListener(null);
                 }
-        readAloudEnabled.setChecked(sharedPreferences.getBoolean("readAloud", true));
+        readAloudEnabled.setChecked(sharedPreferences.getBoolean("readAloud", false));
         // Set switch change listeners
         adBlockerEnabled.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
