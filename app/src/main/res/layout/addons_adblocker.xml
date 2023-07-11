@@ -74,7 +74,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.3"
-                    android:text="Button 1"
+                    android:text="More Info..."
                     android:background="@drawable/button_selector" />
             
                 <View
@@ -87,7 +87,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.3"
-                    android:text="Button 2"
+                    android:text="Advanced Settings"
                     android:background="@drawable/button_selector" />
             
                 <View
@@ -100,7 +100,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.3"
-                    android:text="Button 3"
+                    android:text="Reset to Default"
                     android:background="@drawable/button_selector" />
             
                 <View
