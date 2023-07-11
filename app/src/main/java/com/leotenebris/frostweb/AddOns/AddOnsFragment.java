@@ -66,7 +66,7 @@ public class AddOnsFragment extends Fragment {
                         public void onClick(View v) {
                             if (v.getId() != R.id.videoEnhancerEnabled) {
                                 Intent intent;
-                                intent = new Intent(applicationContext, VideoEnhancerActivity.class);
+                                intent = new Intent(getActivity(), VideoEnhancerActivity.class);
                                 startActivity(intent);
                                 //Toast.makeText(getActivity(), "Video Enhancer card clicked!", Toast.LENGTH_SHORT).show();
                             }
