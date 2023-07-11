@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 //import android.widget.TextView;
 import android.widget.Switch;
 import android.widget.CompoundButton;
-//import android.widget.Toast;
+import android.widget.Toast;
 import com.leotenebris.frostweb.R;
 
 public class VideoEnhancerFragment extends Fragment {
@@ -30,7 +30,8 @@ public class VideoEnhancerFragment extends Fragment {
     public void onPause() {
         super.onPause();
         if(objManager.getVideoEnhancerModified()) {
-            objManager.getVideoEnhancerObj(applicationContext);
+            objManager.getVideoEnhancerObj(getActivity());
+            Toast.makeText(getActivity(), getVideoEnhancerObj(getActivity()), Toast.LENGTH_SHORT).show();
         }
 
     }
