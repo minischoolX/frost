@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import org.json.JSONException;
 import org.json.JSONObject;
+import java.util.Map;
 
 public class ObjManager {
     private static ObjManager instance;
