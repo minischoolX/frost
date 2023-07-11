@@ -81,6 +81,12 @@
             android:theme="@style/AppTheme" />
 
         <activity
+            android:name=".AddOns.VideoEnhancerActivity"
+            android:label="@string/addon"
+            android:parentActivityName=".AddOnsActivity"
+            android:theme="@style/AppTheme" />
+
+        <activity
             android:name=".Tabs.TabsActivity"
             android:label="@string/tabs"
             android:parentActivityName=".BrowserActivity"
