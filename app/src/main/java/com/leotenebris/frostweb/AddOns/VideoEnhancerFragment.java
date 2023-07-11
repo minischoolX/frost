@@ -31,17 +31,6 @@ public class VideoEnhancerFragment extends Fragment {
 
     // Fragment lifecycle method
     @Override
-    public void onAttach() {
-//        super.onAttach();
-        attachPrefs = objManager.getVideoEnhancerObj(getActivity());
-//        if(objManager.getVideoEnhancerModified()) {
-//            objManager.getVideoEnhancerObj(getActivity());
-//            Toast.makeText(getActivity(), objManager.getVideoEnhancerObj(getActivity()), Toast.LENGTH_SHORT).show();
-//        }
-
-    }
-
-    @Override
     public void onPause() {
         super.onPause();
         if(objManager.getVideoEnhancerModified()) {
@@ -59,6 +48,8 @@ public class VideoEnhancerFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_video_enhancer, container, false);
+
+        attachPrefs = objManager.getVideoEnhancerObj(getActivity());
 
         headerViews[0] = rootView.findViewById(R.id.header_view_1);
         contentViews[0] = rootView.findViewById(R.id.content_view_1);
