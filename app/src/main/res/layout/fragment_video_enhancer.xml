@@ -1,0 +1,231 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Expandable View 1 -->
+    <LinearLayout
+        android:id="@+id/expandable_view_1"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Header View -->
+        <LinearLayout
+            android:id="@+id/header_view_1"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:padding="16dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <!-- Header Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Expandable View 1"
+                android:textSize="18sp"
+                android:textColor="@android:color/white"/>
+
+        </LinearLayout>
+
+        <!-- Content View -->
+        <LinearLayout
+            android:id="@+id/content_view_1"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:padding="16dp">
+
+            <!-- Content for Expandable View 1 -->
+            <Switch
+                android:id="@+id/switchSquareAvatars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="square-avatars"
+                android:checked="false"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Expandable View 2 -->
+    <LinearLayout
+        android:id="@+id/expandable_view_2"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Header View -->
+        <LinearLayout
+            android:id="@+id/header_view_2"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:padding="16dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <!-- Header Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Expandable View 2"
+                android:textSize="18sp"
+                android:textColor="@android:color/white"/>
+
+        </LinearLayout>
+
+        <!-- Content View -->
+        <LinearLayout
+            android:id="@+id/content_view_2"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:padding="16dp">
+
+            <!-- Content for Expandable View 2 -->
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Expandable View 3 -->
+    <LinearLayout
+        android:id="@+id/expandable_view_3"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Header View -->
+        <LinearLayout
+            android:id="@+id/header_view_3"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:padding="16dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <!-- Header Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Expandable View 3"
+                android:textSize="18sp"
+                android:textColor="@android:color/white"/>
+
+        </LinearLayout>
+
+        <!-- Content View -->
+        <LinearLayout
+            android:id="@+id/content_view_3"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:padding="16dp">
+
+            <!-- Content for Expandable View 3 -->
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Expandable View 4 -->
+    <LinearLayout
+        android:id="@+id/expandable_view_4"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Header View -->
+        <LinearLayout
+            android:id="@+id/header_view_4"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:padding="16dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <!-- Header Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Expandable View 4"
+                android:textSize="18sp"
+                android:textColor="@android:color/white"/>
+
+        </LinearLayout>
+
+        <!-- Content View -->
+        <LinearLayout
+            android:id="@+id/content_view_4"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:padding="16dp">
+
+            <!-- Content for Expandable View 4 -->
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Expandable View 5 -->
+    <LinearLayout
+        android:id="@+id/expandable_view_5"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Header View -->
+        <LinearLayout
+            android:id="@+id/header_view_5"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:padding="16dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <!-- Header Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Expandable View 5"
+                android:textSize="18sp"
+                android:textColor="@android:color/white"/>
+
+        </LinearLayout>
+
+        <!-- Content View -->
+        <LinearLayout
+            android:id="@+id/content_view_5"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:padding="16dp">
+
+            <!-- Content for Expandable View 5 -->
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <!-- Expandable View 2, 3, 4, and 5 follow the same pattern as Expandable View 1 -->
+
+</LinearLayout>
