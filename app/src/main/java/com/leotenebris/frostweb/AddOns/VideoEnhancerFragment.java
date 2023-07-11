@@ -32,7 +32,7 @@ public class VideoEnhancerFragment extends Fragment {
     // Fragment lifecycle method
     @Override
     public void onAttach() {
-        super.onAttach();
+//        super.onAttach();
         attachPrefs = objManager.getVideoEnhancerObj(getActivity());
 //        if(objManager.getVideoEnhancerModified()) {
 //            objManager.getVideoEnhancerObj(getActivity());
