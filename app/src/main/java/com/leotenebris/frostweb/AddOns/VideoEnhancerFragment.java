@@ -5,7 +5,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import android.widget.LinearLayout;
+//import android.widget.RelativeLayout;
+//import android.widget.TextView;
+import android.widget.Switch;
+import android.widget.CompoundButton;
+//import android.widget.Toast;
 import com.leotenebris.frostweb.R;
 
 public class VideoEnhancerFragment extends Fragment {
@@ -16,14 +21,27 @@ public class VideoEnhancerFragment extends Fragment {
 
     private LinearLayout[] headerViews = new LinearLayout[5];
     private LinearLayout[] contentViews = new LinearLayout[5];
-  
+    private Switch switchSquareAvatars;
+    private SharedPreferences sharedPreferences;
+    private ObjManager objManager = ObjManager.getInstance();
+
+    // Fragment lifecycle method
+    @Override
+    public void onPause() {
+        super.onPause();
+        if(objManager.getVideoEnhancerModified()) {
+            objManager.getVideoEnhancerObj(applicationContext);
+        }
+
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_video_enhancer, container, false);
 
         headerViews[0] = findViewById(R.id.header_view_1);
         contentViews[0] = findViewById(R.id.content_view_1);
-        
+        squareAvatarsSwitch = findViewById(R.id.switchSquareAvatars);
 
         headerViews[1] = findViewById(R.id.header_view_2);
         contentViews[1] = findViewById(R.id.content_view_2);
@@ -43,7 +61,22 @@ public class VideoEnhancerFragment extends Fragment {
             setExpandableClickListener(headerViews[i], contentViews[i], index);
         }
 
-        
+        // Initialize SharedPreferences
+        sharedPreferences = getActivity().getSharedPreferences("videoEnhancer", getActivity().MODE_PRIVATE);
+
+        // Set initial switch state from SharedPreferences
+        squareAvatarsSwitch.setChecked(sharedPreferences.getBoolean("square-avatars", false));
+
+        sharedPreferences.edit().putString("lang_code", "en").apply();
+        sharedPreferences.edit().putString("user-api-key", "").apply();
+
+        squareAvatarsSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                sharedPreferences.edit().putBoolean("square-avatars", isChecked).apply();
+                objManager.setVideoEnhancerModified(true);
+            }
+        });
 
         return rootView;
     }
@@ -76,3 +109,4 @@ public class VideoEnhancerFragment extends Fragment {
         }
     }
 }
+
