@@ -13,6 +13,8 @@ import android.widget.CompoundButton;
 import android.widget.Toast;
 import com.leotenebris.frostweb.R;
 
+import android.content.SharedPreferences;
+
 public class VideoEnhancerFragment extends Fragment {
 
     public VideoEnhancerFragment() {
@@ -21,7 +23,7 @@ public class VideoEnhancerFragment extends Fragment {
 
     private LinearLayout[] headerViews = new LinearLayout[5];
     private LinearLayout[] contentViews = new LinearLayout[5];
-    private Switch switchSquareAvatars;
+    private Switch squareAvatarsSwitch;
     private SharedPreferences sharedPreferences;
     private ObjManager objManager = ObjManager.getInstance();
 
@@ -31,7 +33,7 @@ public class VideoEnhancerFragment extends Fragment {
         super.onPause();
         if(objManager.getVideoEnhancerModified()) {
             objManager.getVideoEnhancerObj(getActivity());
-            Toast.makeText(getActivity(), getVideoEnhancerObj(getActivity()), Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), objManager.getVideoEnhancerObj(getActivity()), Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -40,21 +42,21 @@ public class VideoEnhancerFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_video_enhancer, container, false);
 
-        headerViews[0] = findViewById(R.id.header_view_1);
-        contentViews[0] = findViewById(R.id.content_view_1);
-        squareAvatarsSwitch = findViewById(R.id.switchSquareAvatars);
+        headerViews[0] = rootView.findViewById(R.id.header_view_1);
+        contentViews[0] = rootView.findViewById(R.id.content_view_1);
+        squareAvatarsSwitch = rootView.findViewById(R.id.switchSquareAvatars);
 
-        headerViews[1] = findViewById(R.id.header_view_2);
-        contentViews[1] = findViewById(R.id.content_view_2);
+        headerViews[1] = rootView.findViewById(R.id.header_view_2);
+        contentViews[1] = rootView.findViewById(R.id.content_view_2);
     
-        headerViews[2] = findViewById(R.id.header_view_3);
-        contentViews[2] = findViewById(R.id.content_view_3);
+        headerViews[2] = rootView.findViewById(R.id.header_view_3);
+        contentViews[2] = rootView.findViewById(R.id.content_view_3);
     
-        headerViews[3] = findViewById(R.id.header_view_4);
-        contentViews[3] = findViewById(R.id.content_view_4);
+        headerViews[3] = rootView.findViewById(R.id.header_view_4);
+        contentViews[3] = rootView.findViewById(R.id.content_view_4);
         
-        headerViews[4] = findViewById(R.id.header_view_5);
-        contentViews[4] = findViewById(R.id.content_view_5);
+        headerViews[4] = rootView.findViewById(R.id.header_view_5);
+        contentViews[4] = rootView.findViewById(R.id.content_view_5);
       
         for (int i = 0; i < headerViews.length; i++) {
             final int index = i; // Store the current index in a final variable for use in the click listener
