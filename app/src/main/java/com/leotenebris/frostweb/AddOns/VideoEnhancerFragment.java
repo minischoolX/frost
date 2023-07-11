@@ -33,7 +33,7 @@ public class VideoEnhancerFragment extends Fragment {
     @Override
     public void onAttach() {
         super.onAttach();
-        attachPrefs = objManager.getVideoEnhancerModified();
+        attachPrefs = objManager.getVideoEnhancerObj(getActivity());
 //        if(objManager.getVideoEnhancerModified()) {
 //            objManager.getVideoEnhancerObj(getActivity());
 //            Toast.makeText(getActivity(), objManager.getVideoEnhancerObj(getActivity()), Toast.LENGTH_SHORT).show();
