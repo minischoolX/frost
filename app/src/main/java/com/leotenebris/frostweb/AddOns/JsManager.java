@@ -24,8 +24,8 @@ public class JsManager {
 
         for (Map.Entry<String, ?> entry : allPrefs.entrySet()) {
             String key = entry.getKey();
-            String keyObj;
-            String keyJsCode;
+            String keyObj = null;
+            String keyJsCode = null;
             if (entry.getValue() instanceof Boolean && (Boolean) entry.getValue()) {
                 updateJavaScript(webView, key, keyObj, keyJsCode);
                 //Toast.makeText(webView.getContext(), "JSManager initialized with : " + "\n" + "key :" + key + "\n" + "keyObj :" + keyObj + "\n" + "keyJsCode :" + keyJsCode , Toast.LENGTH_SHORT).show();
