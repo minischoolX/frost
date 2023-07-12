@@ -6,6 +6,8 @@ import android.webkit.WebViewClient;
 import com.leotenebris.frostweb.AddOns.ObjManager;
 import java.util.Map;
 
+import android.widget.Toast;
+
 public class JsManager {
     private ObjManager objManager;
     private String sharedPrefsName = addons;
@@ -21,23 +23,25 @@ public class JsManager {
 
         for (Map.Entry<String, ?> entry : allPrefs.entrySet()) {
             String key = entry.getKey();
+            String keyObj = key + "Obj";
+            String keyJsCode = key + "JsCode";
             if (entry.getValue() instanceof Boolean && (Boolean) entry.getValue()) {
-                updateJavaScript(key);
+                updateJavaScript(webView, key, keyObj, keyJsCode);
             }
         }
     }
 
-    private void updateJavaScript(String scriptKey) {
-        String (scriptKey)Obj;
-        if ((scriptKey)Obj == null) {
-            (scriptKey)Obj = objManager.getObj(scriptKey, true);
+    private void updateJavaScript(WebView webView, String scriptKey, String objHelper, String jsCode) {
+        if (objHelper == null) {
+            objHelper = objManager.getObj(scriptKey, true);
         }
         if (objManager.getModified(scriptKey)) {
-            (scriptKey)Obj = objManager.getObj(scriptKey, true);
+            objHelper = objManager.getObj(scriptKey, true);
         }
-        String (scriptKey)JsCode = objManager.getJsCode(scriptKey);
-        if ((scriptKey)Obj != null && (scriptKey)JsCode != null) {
-            String javascript = (scriptKey)Obj + "\n" + (scriptKey)JsCode;
+        String jsCode = objManager.getJsCode(scriptKey);
+        if (objHelper != null && jsCode != null) {
+            String javascript = objHelper + "\n" + jsCode;
+            Toast.makeText(webView.contect(), "javaScript injected from : " + scriptKey + "\n" + javascript, Toast.LENGTH_LONG).show();
             webView.evaluateJavascript(javascript, null);
         }
     }
