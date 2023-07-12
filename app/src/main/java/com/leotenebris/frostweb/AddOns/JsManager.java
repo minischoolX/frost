@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class JsManager {
     private ObjManager objManager;
-    private String sharedPrefsName = addons;
+    private String sharedPrefsName = "addons";
 
     public JsManager() {
         objManager = ObjManager.getInstance();
@@ -38,10 +38,10 @@ public class JsManager {
         if (objManager.getModified(scriptKey)) {
             objHelper = objManager.getObj(scriptKey, true);
         }
-        String jsCode = objManager.getJsCode(scriptKey);
+        jsCode = objManager.getJsCode(scriptKey);
         if (objHelper != null && jsCode != null) {
             String javascript = objHelper + "\n" + jsCode;
-            Toast.makeText(webView.contect(), "javaScript injected from : " + scriptKey + "\n" + javascript, Toast.LENGTH_LONG).show();
+            Toast.makeText(webView.context(), "javaScript injected from : " + scriptKey + "\n" + javascript, Toast.LENGTH_LONG).show();
             webView.evaluateJavascript(javascript, null);
         }
     }
