@@ -44,6 +44,11 @@ public class ObjManager {
         }
     }
 
+    public String getJsCode (String key) {
+        String dummyJsCode = "dummy js code";
+        return dummyJsCode;
+    }
+    
     public String getObj(String key, Boolean modified) {
         if (context == null) {
             throw new IllegalStateException("Context is not set. Call setContext() before using the ObjManager.");
