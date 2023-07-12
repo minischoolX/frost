@@ -1,5 +1,6 @@
 package com.leotenebris.frostweb.AddOns;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -41,7 +42,7 @@ public class JsManager {
         jsCode = objManager.getJsCode(scriptKey);
         if (objHelper != null && jsCode != null) {
             String javascript = objHelper + "\n" + jsCode;
-            Toast.makeText(webView.context(), "javaScript injected from : " + scriptKey + "\n" + javascript, Toast.LENGTH_LONG).show();
+            Toast.makeText(webView.getContext(), "javaScript injected from : " + scriptKey + "\n" + javascript, Toast.LENGTH_LONG).show();
             webView.evaluateJavascript(javascript, null);
         }
     }
