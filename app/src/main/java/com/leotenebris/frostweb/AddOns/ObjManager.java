@@ -5,6 +5,11 @@ import android.content.SharedPreferences;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import java.util.Map;
+import java.util.HashMap;
+
+import org.json.simple.JSONObject;
+import org.json.simple.JSONException;
+
 
 public class ObjManager {
     private static ObjManager instance;
