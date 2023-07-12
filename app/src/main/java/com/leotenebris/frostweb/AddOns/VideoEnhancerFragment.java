@@ -31,19 +31,6 @@ public class VideoEnhancerFragment extends Fragment {
 
     // Fragment lifecycle method
     @Override
-    public void onPause() {
-        super.onPause();
-        objManager.setContext(getActivity());
-        detachPrefs = objManager.getObj(getActivity(), "videoEnhancer", false);
-        if(!attachPrefs.equalsIgnoreCase(detachPrefs)) {
-            objManager.setModified("videoEnhancer", true);
-            Toast.makeText(getActivity(), "prefs modified as follows : \n" + objManager.getObj(getActivity(), "videoEnhancer", false), Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(getActivity(), "prefs unmodified", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_video_enhancer, container, false);
 
@@ -71,8 +58,6 @@ public class VideoEnhancerFragment extends Fragment {
 
         // Initialize SharedPreferences
         sharedPreferences = getActivity().getSharedPreferences("videoEnhancer", getActivity().MODE_PRIVATE);
-        objManager.setContext(getActivity());
-        attachPrefs = objManager.getObj(getActivity(), "videoEnhancer", false);
 
         // Set initial switch state from SharedPreferences
         squareAvatarsSwitch.setChecked(sharedPreferences.getBoolean("square-avatars", false));
