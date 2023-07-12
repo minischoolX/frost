@@ -37,7 +37,7 @@ public class VideoEnhancerFragment extends Fragment {
         detachPrefs = objManager.getObj(getActivity(), "videoEnhancer", false);
         if(!attachPrefs.equalsIgnoreCase(detachPrefs)) {
             objManager.setModified("videoEnhancer", true);
-            Toast.makeText(getActivity(), "prefs modified as follows : \n" + objManager.getObj("videoEnhancer", false), Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "prefs modified as follows : \n" + objManager.getObj(getActivity(), "videoEnhancer", false), Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(getActivity(), "prefs unmodified", Toast.LENGTH_SHORT).show();
         }
