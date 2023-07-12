@@ -34,7 +34,7 @@ public class FrostWebViewClient extends WebViewClient {
     private Context context;
     private TabFragment tabFragment;
     private TabItem tab;
-    private JsManager jsManager;
+    private JsManager jsManager = new JsManager();
 
     public FrostWebViewClient(BrowserActivity browserActivity) {
         tabFragment = tabFragments.get(0);
