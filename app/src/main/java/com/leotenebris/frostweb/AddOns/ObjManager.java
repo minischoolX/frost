@@ -4,8 +4,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import java.util.Map;
-import java.util.HashMap;
+//import java.util.Map;
+//import java.util.HashMap;
 
 import org.json.JSONObject;
 import org.json.JSONException;
@@ -14,14 +14,8 @@ import org.json.JSONException;
 public class ObjManager {
     private static ObjManager instance;
 
-    private Context context;
-    private Map<String, Boolean> modifiedMap;
-    private boolean isModifiedStatesInitialized;
-
     private ObjManager() {
         // Private constructor to prevent instantiation
-        modifiedMap = new HashMap<>();
-        isModifiedStatesInitialized = false;
     }
 
     public static synchronized ObjManager getInstance() {
@@ -29,23 +23,6 @@ public class ObjManager {
             instance = new ObjManager();
         }
         return instance;
-    }
-
-    public void setContext(Context context) {
-        this.context = context;
-        initializeModifiedStates();
-    }
-
-    private void initializeModifiedStates() {
-        if (!isModifiedStatesInitialized && context != null) {
-            SharedPreferences prefs = context.getSharedPreferences("addons", Context.MODE_PRIVATE);
-            Map<String, ?> allPrefs = prefs.getAll();
-
-            for (String key : allPrefs.keySet()) {
-                modifiedMap.put(key, false);
-            }
-            isModifiedStatesInitialized = true;
-        }
     }
 
     public String getJsCode (String key) {
@@ -82,16 +59,5 @@ public class ObjManager {
         }
 
         return obj.toString();
-    }
-
-    public boolean getModified(String key) {
-        if (modifiedMap.containsKey(key)) {
-            return modifiedMap.get(key);
-        }
-        return false;
-    }
-
-    public void setModified(String key, boolean value) {
-        modifiedMap.put(key, value);
     }
 }
