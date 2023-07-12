@@ -19,7 +19,6 @@ public class JsManager {
 
     public void init(WebView webView) {
         SharedPreferences sharedPrefs = webView.getContext().getSharedPreferences(sharedPrefsName, Context.MODE_PRIVATE);
-        objManager.setContext(webView.getContext());
         Map<String, ?> allPrefs = sharedPrefs.getAll();
 
         for (Map.Entry<String, ?> entry : allPrefs.entrySet()) {
@@ -28,30 +27,16 @@ public class JsManager {
             String keyJsCode = null;
             if (entry.getValue() instanceof Boolean && (Boolean) entry.getValue()) {
                 updateJavaScript(webView, key, keyObj, keyJsCode);
-                //Toast.makeText(webView.getContext(), "JSManager initialized with : " + "\n" + "key :" + key + "\n" + "keyObj :" + keyObj + "\n" + "keyJsCode :" + keyJsCode , Toast.LENGTH_SHORT).show();
-            } else {
-                //Toast.makeText(webView.getContext(), "JSManager initialized failed " , Toast.LENGTH_SHORT).show();
             }
         }
     }
 
     private void updateJavaScript(WebView webView, String scriptKey, String objHelper, String jsCode) {
-        String toastHelper;
-        if (objHelper == null) {
-            objHelper = objManager.getObj(webView.getContext(), scriptKey, true);
-            toastHelper = objHelper + " was null";
-        } else {
-            if (objHelper != null && objManager.getModified(scriptKey)) {
-                objHelper = objManager.getObj(webView.getContext(), scriptKey, true);
-                toastHelper = objHelper + " was non null and addons was modified";
-            } else {
-                toastHelper = objHelper + " was non null and addons unmodified";
-            }
-        }
+        objHelper = objManager.getObj(webView.getContext(), scriptKey);
         jsCode = objManager.getJsCode(scriptKey);
         if (objHelper != null && jsCode != null) {
             String javascript = objHelper + "\n" + jsCode;
-            Toast.makeText(webView.getContext(),toastHelper, Toast.LENGTH_LONG).show();
+            Toast.makeText(webView.getContext(), javascript, Toast.LENGTH_LONG).show();
             webView.evaluateJavascript(javascript, null);
         }
     }
