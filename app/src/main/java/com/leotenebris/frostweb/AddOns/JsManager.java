@@ -28,21 +28,30 @@ public class JsManager {
             String keyJsCode = key + "JsCode";
             if (entry.getValue() instanceof Boolean && (Boolean) entry.getValue()) {
                 updateJavaScript(webView, key, keyObj, keyJsCode);
+                //Toast.makeText(webView.getContext(), "JSManager initialized with : " + "\n" + "key :" + key + "\n" + "keyObj :" + keyObj + "\n" + "keyJsCode :" + keyJsCode , Toast.LENGTH_SHORT).show();
+            } else {
+                //Toast.makeText(webView.getContext(), "JSManager initialized failed " , Toast.LENGTH_SHORT).show();
             }
         }
     }
 
     private void updateJavaScript(WebView webView, String scriptKey, String objHelper, String jsCode) {
+        String toastHelper;
         if (objHelper == null) {
-            objHelper = objManager.getObj(scriptKey, true);
-        }
-        if (objManager.getModified(scriptKey)) {
-            objHelper = objManager.getObj(scriptKey, true);
+            objHelper = objManager.getObj(webView.getContext(), scriptKey, true);
+            toastHelper = objHelper + " was null";
+        } else {
+            if (objHelper != null && objManager.getModified(scriptKey)) {
+                objHelper = objManager.getObj(webView.getContext(), scriptKey, true);
+                toastHelper = objHelper + " was non null and addons was modified";
+            } else {
+                toastHelper = objHelper + " was non null and addons unmodified";
+            }
         }
         jsCode = objManager.getJsCode(scriptKey);
         if (objHelper != null && jsCode != null) {
             String javascript = objHelper + "\n" + jsCode;
-            Toast.makeText(webView.getContext(), "javaScript injected from : " + scriptKey + "\n" + javascript, Toast.LENGTH_LONG).show();
+            Toast.makeText(webView.getContext(),toastHelper, Toast.LENGTH_LONG).show();
             webView.evaluateJavascript(javascript, null);
         }
     }
