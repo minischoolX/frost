@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-//import java.util.Map;
+import java.util.Map;
 //import java.util.HashMap;
 
 import org.json.JSONObject;
@@ -30,11 +30,7 @@ public class ObjManager {
         return dummyJsCode;
     }
     
-    public String getObj(Context context, String key, Boolean modified) {
-        if (context == null) {
-            throw new IllegalStateException("Context is not set. Call setContext() before using the ObjManager.");
-        }
-
+    public String getObj(Context context, String key) {
         SharedPreferences objPrefs = context.getSharedPreferences(key, Context.MODE_PRIVATE);
         Map<String, ?> allPrefs = objPrefs.getAll();
         JSONObject obj = new JSONObject();
@@ -53,11 +49,6 @@ public class ObjManager {
                 e.printStackTrace();
             }
         }
-
-        if (modified) {
-            setModified(key, false);
-        }
-
         return obj.toString();
     }
 }
