@@ -7,8 +7,8 @@ import android.webkit.WebViewClient;
 import java.util.Map;
 import java.util.HashMap;
 
-import org.json.simple.JSONObject;
-import org.json.simple.JSONException;
+import org.json.JSONObject;
+import org.json.JSONException;
 
 
 public class ObjManager {
