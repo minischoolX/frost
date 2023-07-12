@@ -33,24 +33,19 @@ public class VideoEnhancerFragment extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
-        if(objManager.getModified("videoEnhancer")) {
-            objManager.setContext(getActivity());
-            detachPrefs = objManager.getObj("videoEnhancer", false);
-            if(!attachPrefs.equalsIgnoreCase(detachPrefs)) {
-                objManager.setModified("videoEnhancer", true);
-                Toast.makeText(getActivity(), "prefs modified as follows : \n" + objManager.getObj("videoEnhancer", false), Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(getActivity(), "prefs unmodified", Toast.LENGTH_SHORT).show();
-            }
+        objManager.setContext(getActivity());
+        detachPrefs = objManager.getObj(getActivity(), "videoEnhancer", false);
+        if(!attachPrefs.equalsIgnoreCase(detachPrefs)) {
+            objManager.setModified("videoEnhancer", true);
+            Toast.makeText(getActivity(), "prefs modified as follows : \n" + objManager.getObj("videoEnhancer", false), Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(getActivity(), "prefs unmodified", Toast.LENGTH_SHORT).show();
         }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_video_enhancer, container, false);
-
-        objManager.setContext(getActivity());
-        attachPrefs = objManager.getObj("videoEnhancer", false);
 
         headerViews[0] = rootView.findViewById(R.id.header_view_1);
         contentViews[0] = rootView.findViewById(R.id.content_view_1);
@@ -76,6 +71,8 @@ public class VideoEnhancerFragment extends Fragment {
 
         // Initialize SharedPreferences
         sharedPreferences = getActivity().getSharedPreferences("videoEnhancer", getActivity().MODE_PRIVATE);
+        objManager.setContext(getActivity());
+        attachPrefs = objManager.getObj(getActivity(), "videoEnhancer", false);
 
         // Set initial switch state from SharedPreferences
         squareAvatarsSwitch.setChecked(sharedPreferences.getBoolean("square-avatars", false));
