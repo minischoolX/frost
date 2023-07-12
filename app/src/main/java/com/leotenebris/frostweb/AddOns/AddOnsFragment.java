@@ -50,7 +50,7 @@ public class AddOnsFragment extends Fragment {
         TextView readAloudDescription = rootView.findViewById(R.id.readAloudDescription);
 
         // Initialize SharedPreferences
-        sharedPreferences = getActivity().getSharedPreferences("AddOnsPrefs", getActivity().MODE_PRIVATE);
+        sharedPreferences = getActivity().getSharedPreferences("addons", getActivity().MODE_PRIVATE);
 
         // Set initial switch state from SharedPreferences
         adBlockerEnabled.setChecked(sharedPreferences.getBoolean("adBlocker", false));
