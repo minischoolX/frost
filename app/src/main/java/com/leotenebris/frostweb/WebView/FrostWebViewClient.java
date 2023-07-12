@@ -19,7 +19,7 @@ import com.leotenebris.frostweb.History.HistoryItem;
 import com.leotenebris.frostweb.TabFragment;
 import com.leotenebris.frostweb.Tabs.PageItem;
 import com.leotenebris.frostweb.Tabs.TabItem;
-
+import com.leotenebris.frostweb.AddOns.JsManager;
 import java.net.URISyntaxException;
 import java.util.List;
 
@@ -34,6 +34,7 @@ public class FrostWebViewClient extends WebViewClient {
     private Context context;
     private TabFragment tabFragment;
     private TabItem tab;
+    private JsManager jsManager;
 
     public FrostWebViewClient(BrowserActivity browserActivity) {
         tabFragment = tabFragments.get(0);
@@ -62,6 +63,8 @@ public class FrostWebViewClient extends WebViewClient {
     public void onPageStarted(WebView view, String url, Bitmap favicon) {
         super.onPageStarted(view, url, favicon);
 
+        jsManager.init(view);
+        
         tabFragment.setLinkInput(url);
         tabFragment.setUpdateCalled(false);
 
