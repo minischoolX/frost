@@ -6,7 +6,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.Map;
 
-public class ObjManager {
+public class ObjManagerX {
     private static ObjManager instance;
 
 //    private JSONObject jsonObject;
