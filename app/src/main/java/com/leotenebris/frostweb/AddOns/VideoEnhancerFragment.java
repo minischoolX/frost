@@ -33,23 +33,24 @@ public class VideoEnhancerFragment extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
-        if(objManager.getVideoEnhancerModified()) {
-            detachPrefs = objManager.getVideoEnhancerObj(getActivity());
+        if(objManager.getModified(videoEnhancer)) {
+            objManager.setContext(getActivity());
+            detachPrefs = objManager.getObj(videoEnhancer, false);
             if(!attachPrefs.equalsIgnoreCase(detachPrefs)) {
-                objManager.getVideoEnhancerObj(getActivity());
-                Toast.makeText(getActivity(), "prefs modified as follows : \n" + objManager.getVideoEnhancerObj(getActivity()), Toast.LENGTH_SHORT).show();
+                objManager.setModified(videoEnhancer, true);
+                Toast.makeText(getActivity(), "prefs modified as follows : \n" + objManager.getObj(videoEnhancer, false), Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(getActivity(), "prefs unmodified", Toast.LENGTH_SHORT).show();
             }
         }
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_video_enhancer, container, false);
 
-        attachPrefs = objManager.getVideoEnhancerObj(getActivity());
+        objManager.setContext(getActivity());
+        attachPrefs = objManager.getObj(videoEnhancer, false);
 
         headerViews[0] = rootView.findViewById(R.id.header_view_1);
         contentViews[0] = rootView.findViewById(R.id.content_view_1);
@@ -86,7 +87,6 @@ public class VideoEnhancerFragment extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 sharedPreferences.edit().putBoolean("square-avatars", isChecked).apply();
-                objManager.setVideoEnhancerModified(true);
             }
         });
 
@@ -121,4 +121,3 @@ public class VideoEnhancerFragment extends Fragment {
         }
     }
 }
-
