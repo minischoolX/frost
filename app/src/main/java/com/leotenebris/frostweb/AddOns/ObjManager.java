@@ -92,7 +92,7 @@ public class ObjManager {
         return false;
     }
 
-    private void setModified(String key, boolean value) {
+    public void setModified(String key, boolean value) {
         modifiedMap.put(key, value);
     }
 }
