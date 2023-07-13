@@ -105,7 +105,7 @@ public class JsManager {
         return modifiedMap.get(key);
     }
     
-    public setModified(String key, Boolean value) {
+    public void setModified(String key, Boolean value) {
         modifiedMap.put(key, value);
     }
 
@@ -113,7 +113,7 @@ public class JsManager {
         return objHelperMap.get(key);
     }
 
-    public setObjHelper(String key) {
+    public void setObjHelper(String key) {
         objHelperMap.put(key, getObj(key));
     }
 
@@ -121,7 +121,7 @@ public class JsManager {
         return jsCodeHelperMap.get(key);
     }
 
-    public setJsCodeHelper(String key) {
+    public void setJsCodeHelper(String key) {
         jsCodeHelperMap.put(key, getJsCode(key));
     }
 
