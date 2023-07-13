@@ -73,24 +73,27 @@ public class JsManager {
                     setModified(key, false);
                 }
             }
-        }
-
         objHelper = "var defaultObj=" + getObjHelper(key) + ",user_settings=defaultObj;";
         jsCode = getJsCodeHelper(key);
         if (objHelper != null && jsCode != null) {
             String javascript = objHelper + "\n" + jsCode;
-            Toast.makeText(appContext, javascript, Toast.LENGTH_LONG).show();
+            
             if (key == "videoEnhancer") {
                 if (url.matches("^(https?://(www|m)\\.youtube\\.com/.*)|(https?://.*\\.youtube-nocookie\\.com/embed/.*)|(https?://youtube\\.googleapis\\.com/embed/.*)|(https?://raingart\\.github\\.io/options\\.html.*)$") &&
                     !url.matches("^(https?://.*\\.youtube\\.com/.*\\.xml.*)|(https?://.*\\.youtube\\.com/error.*)|(https?://music\\.youtube\\.com/.*)|(https?://accounts\\.youtube\\.com/.*)|(https?://studio\\.youtube\\.com/.*)|(https?://.*\\.youtube\\.com/redirect\\?.*)$")) {
 
                 webView.evaluateJavascript(javascript, null);
+                Toast.makeText(appContext, key + "on YouTube : /n" + javascript, Toast.LENGTH_LONG).show();
 
                 }
             } else {
                 webView.evaluateJavascript(javascript, null);
+                Toast.makeText(appContext, key + "/n" + javascript, Toast.LENGTH_LONG).show();
             }
+        }            
         }
+
+
 //        objHelper = getObjHelper(key);
 //var defaultObj={"square-avatars":"on","user-api-key":"",lang_code:"en"},user_settings=defaultObj;
 //"var defaultObj=" + "{\"square-avatars\":\"on\",\"user-api-key\":\"\",lang_code:\"en\"}" + ",user_settings=defaultObj;";
