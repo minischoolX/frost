@@ -2,6 +2,8 @@
     <string name="app_name" translatable="false">Frost Web</string>
     <string name="app_version" translatable="false">alpha03</string>
 
+    <string name="prefs_name" translable="false">addons</string>
+    
     <string name="new_tab_url" translatable="false">frostweb://newtab</string>
 
     <string name="search_hint">Search or enter web address</string>
