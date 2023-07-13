@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class FrostWebApplication extends Application {
     private static FrostWebApplication instance;
 
-    private JsManager jsManager = JsManager(getApplicationContext());
+    private JsManager jsManager;
 
     public static final String KEY_TABS = "Tabs";
     public static final String KEY_HISTORY = "History";
