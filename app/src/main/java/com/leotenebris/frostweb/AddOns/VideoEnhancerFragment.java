@@ -25,7 +25,7 @@ public class VideoEnhancerFragment extends Fragment {
     private LinearLayout[] contentViews = new LinearLayout[5];
     private Switch squareAvatarsSwitch;
     private SharedPreferences sharedPreferences;
-    private ObjManager objManager = ObjManager.getInstance();
+    private JsManager jsManager = JsManager.getInstance();
     private String attachPrefs;
     private String detachPrefs;
 
@@ -69,6 +69,7 @@ public class VideoEnhancerFragment extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 sharedPreferences.edit().putBoolean("square-avatars", isChecked).apply();
+                JsManager.setModified("videoEnhancer", true);
             }
         });
 
