@@ -11,17 +11,19 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.leotenebris.frostweb.R;
+
 public class JsManager {
     private static JsManager instance;
     private String sharedPrefsName;
     private Map<String, String> objHelperMap;
-    private Map<String, String> jsCodeMap;
+    private Map<String, String> jsCodeHelperMap;
     private Map<String, Boolean> modifiedMap;
     private Context appContext;
 
     private JsManager(Context context) {
         objHelperMap = new HashMap<>();
-        jsCodeMap = new HashMap<>();
+        jsCodeHelperMap = new HashMap<>();
         modifiedMap = new HashMap<>();
         appContext = context.getApplicationContext();
         sharedPrefsName = context.getString(R.string.prefs_name);
@@ -48,7 +50,7 @@ public class JsManager {
 
         for (String key : allPrefs.keySet()) {
             objHelperMap.put(key, null);
-            jsCodeMap.put(key, null);
+            jsCodeHelperMap.put(key, null);
             modifiedMap.put(key, false);
         }
     }
