@@ -8,7 +8,7 @@ import android.util.Log;
 import com.google.gson.Gson;
 import com.leotenebris.frostweb.History.HistoryItem;
 import com.leotenebris.frostweb.Tabs.TabItem;
-import com.leotenebris.frostweb.Addons.JsManager;
+import com.leotenebris.frostweb.AddOns.JsManager;
 
 import java.util.ArrayList;
 
