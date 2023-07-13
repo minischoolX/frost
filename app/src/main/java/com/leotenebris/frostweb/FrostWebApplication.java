@@ -8,11 +8,14 @@ import android.util.Log;
 import com.google.gson.Gson;
 import com.leotenebris.frostweb.History.HistoryItem;
 import com.leotenebris.frostweb.Tabs.TabItem;
+import com.leotenebris.frostweb.Addons.JsManager;
 
 import java.util.ArrayList;
 
 public class FrostWebApplication extends Application {
     private static FrostWebApplication instance;
+
+    private JsManager jsManager = new JsManager();
 
     public static final String KEY_TABS = "Tabs";
     public static final String KEY_HISTORY = "History";
@@ -27,7 +30,7 @@ public class FrostWebApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        JsManager.initialize(getApplicationContext());
+        jsManager.initialize(getApplicationContext());
         Thread.setDefaultUncaughtExceptionHandler(this::handleUncaughtException);
     }
 
