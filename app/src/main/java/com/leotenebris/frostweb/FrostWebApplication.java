@@ -27,6 +27,7 @@ public class FrostWebApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        JsManager.initialize(getApplicationContext());
         Thread.setDefaultUncaughtExceptionHandler(this::handleUncaughtException);
     }
 
