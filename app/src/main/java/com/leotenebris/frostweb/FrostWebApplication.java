@@ -1,6 +1,7 @@
 package com.leotenebris.frostweb;
 
 import android.app.Application;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.util.Log;
@@ -15,7 +16,7 @@ import java.util.ArrayList;
 public class FrostWebApplication extends Application {
     private static FrostWebApplication instance;
 
-    private JsManager jsManager = new JsManager();
+    private JsManager jsManager = new JsManager(Context);
 
     public static final String KEY_TABS = "Tabs";
     public static final String KEY_HISTORY = "History";
