@@ -25,7 +25,7 @@ public class VideoEnhancerFragment extends Fragment {
     private LinearLayout[] contentViews = new LinearLayout[5];
     private Switch squareAvatarsSwitch;
     private SharedPreferences sharedPreferences;
-    private JsManager jsManager = JsManager.getInstance();
+    private JsManager jsManager;
     private String attachPrefs;
     private String detachPrefs;
 
@@ -33,6 +33,8 @@ public class VideoEnhancerFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_video_enhancer, container, false);
+
+        jsManager = JsManager.getInstance();
 
         headerViews[0] = rootView.findViewById(R.id.header_view_1);
         contentViews[0] = rootView.findViewById(R.id.content_view_1);
