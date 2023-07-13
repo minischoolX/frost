@@ -34,7 +34,7 @@ public class FrostWebViewClient extends WebViewClient {
     private Context context;
     private TabFragment tabFragment;
     private TabItem tab;
-    private JsManager jsManager = new JsManager();
+    private JsManager jsManager =JsManager.getInstance();
 
     public FrostWebViewClient(BrowserActivity browserActivity) {
         tabFragment = tabFragments.get(0);
@@ -63,7 +63,7 @@ public class FrostWebViewClient extends WebViewClient {
     public void onPageStarted(WebView view, String url, Bitmap favicon) {
         super.onPageStarted(view, url, favicon);
 
-        jsManager.init(view);
+        jsManager.init(view, url);
         
         tabFragment.setLinkInput(url);
         tabFragment.setUpdateCalled(false);
