@@ -71,7 +71,8 @@ public class VideoEnhancerFragment extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 sharedPreferences.edit().putBoolean("square-avatars", isChecked).apply();
-                JsManager.setModified("videoEnhancer", true);
+                jsManager.setModified("videoEnhancer", true);
+                //modifiedMap.put(key, value);
             }
         });
 
