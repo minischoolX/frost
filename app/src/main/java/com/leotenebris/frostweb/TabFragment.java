@@ -94,8 +94,8 @@ public class TabFragment extends Fragment {
         webSettings.setDatabaseEnabled(true);
         webSettings.setSupportMultipleWindows(true);
         webSettings.setDomStorageEnabled(true);
-        webSettings.setLoadWithOverviewMode(true);
-        webSettings.setUseWideViewPort(true);
+        webSettings.setLoadWithOverviewMode(false); //originally true
+        webSettings.setUseWideViewPort(false); //originally true
         webSettings.setAllowFileAccess(true);
         webSettings.setAllowContentAccess(true);
         webSettings.setAppCacheEnabled(true);
