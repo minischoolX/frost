@@ -3,6 +3,7 @@ package com.leotenebris.frostweb.AddOns;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.webkit.WebView;
+import android.webkit.WebSettings;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -85,6 +86,8 @@ public class JsManager {
                     !url.matches("^(https?://.*\\.youtube\\.com/.*\\.xml.*)|(https?://.*\\.youtube\\.com/error.*)|(https?://music\\.youtube\\.com/.*)|(https?://accounts\\.youtube\\.com/.*)|(https?://studio\\.youtube\\.com/.*)|(https?://.*\\.youtube\\.com/redirect\\?.*)$")) {
 
                 webView.evaluateJavascript(javascript, null);
+                WebSettings settings = webView.getSettings();
+                settings.setUseWideViewPort(false);
                 Toast.makeText(appContext, key + "on YouTube : /n" + javascript, Toast.LENGTH_LONG).show();
 
                 }
